@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "cera_probold";
+  src: url("../fonts/cera_pro_bold-webfont.eot");
+  src: url("../fonts/cera_pro_bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/cera_pro_bold-webfont.woff2") format("woff2"),
+    url("../fonts/cera_pro_bold-webfont.woff") format("woff"),
+    url("../fonts/cera_pro_bold-webfont.ttf") format("truetype"),
+    url("../fonts/cera_pro_bold-webfont.svg#cera_probold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cera_promedium";
+  src: url("../fonts/cera_pro_medium-webfont.eot");
+  src: url("../fonts/cera_pro_medium-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/cera_pro_medium-webfont.woff2") format("woff2"),
+    url("../fonts/cera_pro_medium-webfont.woff") format("woff"),
+    url("../fonts/cera_pro_medium-webfont.ttf") format("truetype"),
+    url("../fonts/cera_pro_medium-webfont.svg#cera_promedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cera_proregular";
+  src: url("../fonts/cera_pro_regular-webfont.eot");
+  src: url("../fonts/cera_pro_regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/cera_pro_regular-webfont.woff2") format("woff2"),
+    url("../fonts/cera_pro_regular-webfont.woff") format("woff"),
+    url("../fonts/cera_pro_regular-webfont.ttf") format("truetype"),
+    url("../fonts/cera_pro_regular-webfont.svg#cera_proregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url("../images/cursor.png") 16 16, auto;
+}
+
+a:hover {
+  cursor: url("../images/cursor-hover.png") 16 16, pointer;
+}
+
+.home-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: url("../images/background1.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+#petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.petal {
+  position: absolute;
+  background: radial-gradient(
+    ellipse at center,
+    #ff9b9e 0%,
+    #cc7c88 50%,
+    #f0a7b6 100%
+  );
+  border-radius: 70% 30% 60% 40% / 60% 40% 70% 30%;
+  box-shadow: 0 0 10px rgba(255, 163, 187, 0.7),
+    0 0 20px rgba(255, 135, 155, 0.813);
+  animation: falling linear infinite;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 5px #e8a3b8) brightness(1.1);
+  transform-origin: center;
+  mix-blend-mode: screen;
+}
+
+@keyframes falling {
+  0% {
+    top: -5%;
+    transform: rotate(0deg) translateX(0) scale(1.2);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 105%;
+    transform: rotate(720deg) translateX(calc((var(--random-x) - 0.5) * 120px))
+      scale(0.9);
+    opacity: 0;
+  }
+}
+
+/*/PRELOADER/*/
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgb(32, 29, 52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hidePreloader 3s forwards;
+}
+
+@keyframes hidePreloader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.loader {
+  font-size: 56px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #d00e99;
+  letter-spacing: 2px;
+  position: relative;
+}
+.loader::after {
+  content: "Anastasiia Saienko";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  text-shadow: 0 0 2px #fff, 0 0 1px #fff, 0 0 1px #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 3s linear forwards;
+}
+
+@keyframes animloader {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+header {
+  padding-top: 50px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+header nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 143px;
+  height: 48px;
+  text-decoration: none;
+  font-family: "cera_proregular";
+  transition: all 0.4s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  font-family: "cera_probold";
+  color: #1e1e1e;
+  transform: scale(1.1);
+  font-size: 17px;
+}
+
+.button-hover {
+  position: relative;
+  padding: 10px 22px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #d00e99;
+}
+
+.button-hover:active {
+  transform: scale(0.96);
+}
+
+.button-hover:before,
+.button-hover:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+
+.button-hover:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #d00e99 20%, transparent 30%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #d00e99 15%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.button-hover:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #d00e99 15%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%),
+    radial-gradient(circle, #d00e99 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+.about-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: url("../images/background3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.contacts-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: url("../images/background3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.education-page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: url("../images/background3.jpg") no-repeat center center;
+  background-size: cover;
+}
