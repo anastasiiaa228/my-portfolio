@@ -1,0 +1,7 @@
+@media screen and (max-width: 800px) {
+  .loader {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+}
