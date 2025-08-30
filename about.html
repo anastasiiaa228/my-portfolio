@@ -6,6 +6,7 @@
     <title>Portfolio | About me</title>
     <link rel="icon" href="images/Logo.png" type="image/png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body class="about-page">
     <header>
@@ -32,7 +33,7 @@
       <section>
         <div class="container">
           <div class="center"><h1>ABOUT ME</h1></div>
-          <div class="about">
+          <div  data-aos="fade-up"class="about">
             <div class="aboutme1">
               <div class="text-about">
                 <h2>A little about me</h2>
@@ -51,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="about">
+          <div  data-aos="fade-up"class="about">
             <div class="image-small">
               <img src="images/profil-photo3.jpg" />
               <div class="photo2"><img src="images/profil-photo2.jpg" /></div>
@@ -71,7 +72,7 @@ In winter, I love snowboarding - I really
               </p>
             </div>
           </div>
-          <div class="about">
+          <div  data-aos="fade-up"class="about">
             <div class="aboutme1">
               <div class="text-about">
                 <h2>Moving to Switzerland</h2>
@@ -92,7 +93,34 @@ In winter, I love snowboarding - I really
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+       <div class="footer-bottom-media">
+              <h3>Social Media</h3>
+              <div class="social-media">
+                <ul>
+                  <li>
+                    <a href="https://github.com/anastasiiaa228" target="_blank"
+                      ><img src="images/git.svg" 
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/aayata.assni?igsh=aXloamdlemI0MWF0&utm_source=qr" target="_blank"
+                      ><img src="images/inst.svg" 
+                    /></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-bottom">
+                <h2>© 2025 Anastasiia Saienko. All Rights Reserved.</h2>
+              </div>
+    </footer>
     <script src="js/activ.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
   </body>
 </html>

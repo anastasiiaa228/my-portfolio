@@ -392,3 +392,64 @@ header nav ul li a.active {
   display: flex;
   margin-top: 100px;
 }
+
+.footer-bottom-media {
+  
+}
+
+.footer-bottom-media h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  font-family: "cera_probold";
+  background: linear-gradient(90deg, #fbe2f1 0%, #e692e6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 44px;
+  text-align: right;
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+
+}
+
+.social-media ul {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.social-media ul li {
+  list-style: none;
+}
+
+
+.social-media ul li a:hover {
+  transform: scale(1.2);
+}
+
+.social-media a img{
+  width: 50px;
+  height: 50px;
+}
+
+.footer-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.footer-bottom h2{
+      font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+    color: #d9d9d9;
+    margin-bottom: 10px;
+    font-family: "cera_promedium";
+    text-align: center;
+}
